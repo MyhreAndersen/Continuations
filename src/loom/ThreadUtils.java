@@ -46,7 +46,7 @@ public class ThreadUtils {
     	waitUntilPrevThreadNotRunning();
         wakeupThread(next); // Continue here after suspend
     }
-
+    
 	// *********************************************************************
 	// *** BASIC PRIMITIVE: END_THREAD
 	// *********************************************************************
