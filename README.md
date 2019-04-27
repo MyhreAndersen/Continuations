@@ -1,4 +1,4 @@
-An emulated version of Delimited Continuations suitable for experimenting and testing.
+This is an emulated version of Delimited Continuations suitable for experimenting and testing.
 <br>This code is used in the Open Source Project https://github.com/portablesimula
 and is suitable for that purpose.
 <br>It is not tested in other environments. Any help is welcomed in improving it.
