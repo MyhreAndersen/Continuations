@@ -8,8 +8,8 @@ public class Example {
 	static final ContinuationScope scope=new ContinuationScope("TST");
 	
     public static void main(String[] args) {
-//    	example1();
-    	example2();
+    	example1();
+//    	example2();
     }
 
 	// *********************************************************************

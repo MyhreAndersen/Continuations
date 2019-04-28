@@ -14,6 +14,7 @@ import java.lang.Throwable;
  *
  *  public class Continuation implements Runnable {
  *      public Continuation(ContinuationScope scope, Runnable target)
+ *      public static Continuation getCurrentContinuation(ContinuationScope scope)
  *      public final void run()
  *      public static void yield(ContinuationScope scope)
  *      public boolean isDone()
