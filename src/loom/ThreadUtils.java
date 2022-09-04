@@ -13,15 +13,15 @@ import java.lang.Thread;
 public class ThreadUtils {
     private static final boolean DEBUG = false;//true;
     private static final boolean TRACE = false;//true;
-	public static RuntimeException PENDING_EXCEPTION$=null;
+	public static RuntimeException _PENDING_EXCEPTION=null;
 
     
 	// *********************************************************************
-	// *** BASIC PRIMITIVE: START_THREAD
+	// *** BASIC PRIMITIVE: _STARTTHREAD
 	// *********************************************************************
-    static void START_THREAD(final Thread next) {
+    static void _STARTTHREAD(final Thread next) {
         Thread current=Thread.currentThread();
-        if(TRACE) System.out.println("Continuation.START_THREAD: "+current.getName()+" ==> "+next.getName());
+        if(TRACE) System.out.println("Continuation._STARTTHREAD: "+current.getName()+" ==> "+next.getName());
         prevThread=current;
         next.start();				// Start   'next'
         synchronized (current) {	// Suspend 'prev'
@@ -77,9 +77,9 @@ public class ThreadUtils {
 	private static void wakeupThread(final Thread next) {
 		Thread curr=Thread.currentThread();
 		if (TRACE) System.out.println("Continuation.wakeupThread: WAKEUP "+curr);
-		if (PENDING_EXCEPTION$ != null) {
-			RuntimeException t = PENDING_EXCEPTION$;
-			PENDING_EXCEPTION$ = null;
+		if (_PENDING_EXCEPTION != null) {
+			RuntimeException t = _PENDING_EXCEPTION;
+			_PENDING_EXCEPTION = null;
 			if (TRACE) System.out.println("Continuation.wakeupThread: Re-throw " + t);
 			if(t!=null) throw (t);
 		}
